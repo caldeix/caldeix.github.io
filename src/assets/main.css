@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Tokens del DS Personal (https://claude.ai/artifact/KE9YMqqV3zGi7fXeDLcGnA).
+   Los grises, azules y esmeralda llevan los valores rgb del DS para que coincidan
+   exactamente; mostaza y coral son colores propios del DS. */
+@theme {
+  --font-title: "Cormorant", Garamond, "Times New Roman", serif;
+  --font-text: "Roboto", "Segoe UI", system-ui, sans-serif;
+
+  --color-gray-100: rgb(243 244 246);
+  --color-gray-200: rgb(229 231 235);
+  --color-gray-300: rgb(209 213 219);
+  --color-gray-400: rgb(156 163 175);
+  --color-gray-500: rgb(107 114 128);
+  --color-gray-600: rgb(75 85 99);
+  --color-gray-700: rgb(55 65 81);
+  --color-gray-800: rgb(31 41 55);
+  --color-gray-900: rgb(17 24 39);
+  --color-blue-500: rgb(59 130 246);
+  --color-blue-600: rgb(37 99 235);
+  --color-emerald-500: rgb(16 185 129);
+  --color-emerald-700: rgb(4 120 87);
+  --color-mustard-500: rgb(225 173 1);
+  --color-mustard-700: rgb(133 100 0);
+  --color-coral-500: rgb(255 127 80);
+  --color-coral-700: rgb(190 60 30);
+
+  --animate-caret-blink: caret-blink 1s step-end infinite;
+
+  @keyframes caret-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+/* Modo oscuro por defecto: todo es oscuro salvo que <html> tenga la clase "light"
+   (la pone el botón de modo y se recuerda en el navegador). */
+@custom-variant dark (&:where(:root:not(.light), :root:not(.light) *));
+
+/* Degradado de títulos del DS: de blue-500 en el centro a blue-600 */
+@utility bg-radial-blue {
+  background-image: radial-gradient(
+    ellipse at center,
+    var(--color-blue-500) 0%,
+    var(--color-blue-600) 70%
+  );
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-padding-top: 4rem;
+  }
+
+  html.light {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-white font-text text-gray-800 dark:bg-gray-900 dark:text-white;
+  }
+}

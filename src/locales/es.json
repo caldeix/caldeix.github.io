@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Luis Miguel Caldeiro · Desarrollador fullstack",
+    "description": "Luis Miguel Caldeiro, desarrollador fullstack especializado en backend PHP e IA."
+  },
+  "header": {
+    "brand": "{'{'}CALDEIRO{'}'}",
+    "nav": "Secciones",
+    "links": {
+      "skills": "SKILLS",
+      "experience": "EXPERIENCIA",
+      "education": "EDUCACIÓN",
+      "hobbies": "HOBBIES",
+      "projects": "PROYECTOS"
+    },
+    "themeToggle": "Cambiar entre modo claro y oscuro",
+    "openMenu": "Abrir el menú",
+    "closeMenu": "Cerrar el menú"
+  },
+  "about": {
+    "greeting": "Hola, soy",
+    "name": "Luis Miguel",
+    "portrait": "Retrato de Luis Miguel dibujado a lápiz",
+    "phrases": [
+      "Programar es mi pasión y mi hobby",
+      "Me gusta pelearme con monolitos",
+      "Innovar es mi día a día"
+    ],
+    "description": "Soy Luis, he realizado la FP de DAM y actualmente estoy cursando Ingeniería Informática. Trabajo como desarrollador fullstack desde hace +{years} años. Actualmente estoy en ATLS, especializado en backend PHP e IA: creo APIs REST con un alto volumen de datos, automatizo nuestros sistemas e innovo en tecnología.",
+    "objective": {
+      "label": "Mi objetivo:",
+      "text": "estar en constante desarrollo, tanto profesional como personal. Me gusta aprender y no tengo límite para ello."
+    },
+    "contact": {
+      "list": "Contacto",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Enviar un correo",
+      "call": "Llamar por teléfono",
+      "copyPhone": "Copiar el teléfono",
+      "phoneCopied": "Teléfono copiado",
+      "phoneCopyFailed": "No se ha podido copiar el teléfono"
+    },
+    "cv": {
+      "button": "Descargar CV",
+      "fileName": "CV-Luis-Miguel-Caldeiro.pdf"
+    }
+  }
+}
