@@ -98,7 +98,7 @@
         "company": "ATLS",
         "type": "Jornada completa",
         "achievements": [
-          "Desarrollo de APIs REST en PHP con Laravel y frameworks propios, y personalización de frontales en Vue.",
+          "Desarrollo de APIs REST en PHP nativo (y alguna en Laravel), y personalización de frontales en Vue.",
           "Migraciones críticas de software: de PHP 5 a 8.5 y de MySQL 5 a 8.",
           "Automatizaciones en Python que integran GPT y modelos de IA propios.",
           "Colas de procesos y envío de correos en Java para sistemas internos."
