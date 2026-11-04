@@ -254,5 +254,44 @@
         ]
       }
     }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "web": "Ver web",
+    "code": "Código",
+    "newTab": "se abre en una pestaña nueva",
+    "screenshot": "Captura de {name}",
+    "technologies": "Tecnologías",
+    "items": {
+      "twoBudget": {
+        "tagline": "Las finanzas de casa, en pareja o por tu cuenta, cifradas de extremo a extremo.",
+        "highlights": [
+          "Ingresos y gastos fijos o variables, por persona o compartidos con el reparto que se quiera (50/50, 70/30…), con balance mensual y acumulado.",
+          "Cierre de mes, presupuestos, metas de ahorro y copia en un clic de los gastos fijos del mes anterior.",
+          "Hogar compartido en tiempo real y sin conexión, con cifrado de extremo a extremo (AES-256-GCM): en la nube solo hay datos ilegibles."
+        ]
+      },
+      "danaRadar": {
+        "tagline": "Los avisos naranja y rojo de AEMET, dibujados como nubes sobre el mapa de España.",
+        "highlights": [
+          "Cada 20 minutos, GitHub Actions ejecuta un script en Python que lee los avisos oficiales de AEMET y los convierte en GeoJSON.",
+          "Frontend estático con Leaflet y filtros SVG para el efecto de nube, con vistas de la Península y Canarias.",
+          "Sin servidor, sin base de datos y con coste 0 €. Código abierto con licencia MIT."
+        ]
+      },
+      "speech2text": {
+        "tagline": "Dicta, transcribe y traduce en tiempo real, sin servidores, sin registro y sin claves de API.",
+        "highlights": [
+          "Cuatro herramientas sobre la IA integrada en Chrome: dictado con transcripción y traducción en vivo, detección de idioma, resumidor y traductor.",
+          "Los modelos se ejecutan en el propio navegador y, tras la primera descarga, funciona sin conexión.",
+          "JavaScript sin dependencias ni build, con la interfaz en 6 idiomas. Código abierto con licencia MIT."
+        ]
+      }
+    },
+    "more": {
+      "title": "¿Quieres ver más?",
+      "text": "Tengo más proyectos, perfiles y cosas que voy probando. Están todos en mi página de enlaces.",
+      "button": "Ver mis links"
+    }
   }
 }

@@ -3,6 +3,7 @@ import AboutSection from './components/AboutSection.vue'
 import EducationSection from './components/EducationSection.vue'
 import ExperienceSection from './components/ExperienceSection.vue'
 import HobbiesSection from './components/HobbiesSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
 import SectionDivider from './components/SectionDivider.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import TheHeader from './components/TheHeader.vue'
@@ -20,5 +21,7 @@ import TheHeader from './components/TheHeader.vue'
     <EducationSection />
     <SectionDivider />
     <HobbiesSection />
+    <SectionDivider />
+    <ProjectsSection />
   </main>
 </template>
