@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useActiveSection } from '@/composables/useActiveSection'
 import { useTheme } from '@/composables/useTheme'
-import { gradientText, iconButton, navLink } from '@/ds'
+import { gradientText, iconButton, navLink, navLinkActive } from '@/ds'
 import IconClose from './icons/IconClose.vue'
 import IconMenu from './icons/IconMenu.vue'
 import IconMoon from './icons/IconMoon.vue'
@@ -10,14 +11,16 @@ import IconSun from './icons/IconSun.vue'
 
 const { t } = useI18n()
 
-// Las secciones todavía no existen: los enlaces solo cambian el hash
+// Por ahora solo existe la sección de skills; el resto de enlaces solo cambian el hash
 const links = [
-  { key: 'skills', href: '#skills' },
-  { key: 'experience', href: '#experiencia' },
-  { key: 'education', href: '#educacion' },
-  { key: 'hobbies', href: '#hobbies' },
-  { key: 'projects', href: '#proyectos' },
+  { key: 'skills', id: 'skills' },
+  { key: 'experience', id: 'experiencia' },
+  { key: 'education', id: 'educacion' },
+  { key: 'hobbies', id: 'hobbies' },
+  { key: 'projects', id: 'proyectos' },
 ] as const
+
+const activeSection = useActiveSection(links.map((link) => link.id))
 
 const { isDark, toggle } = useTheme()
 const menuOpen = ref(false)
@@ -59,7 +62,13 @@ onBeforeUnmount(() => {
       </a>
 
       <nav class="hidden items-center gap-8 lg:flex" :aria-label="t('header.nav')">
-        <a v-for="link in links" :key="link.href" :href="link.href" :class="navLink">
+        <a
+          v-for="link in links"
+          :key="link.id"
+          :href="`#${link.id}`"
+          :class="activeSection === link.id ? navLinkActive : navLink"
+          :aria-current="activeSection === link.id ? 'location' : undefined"
+        >
           {{ t(`header.links.${link.key}`) }}
         </a>
       </nav>
@@ -98,8 +107,14 @@ onBeforeUnmount(() => {
       :aria-label="t('header.nav')"
     >
       <ul class="container mx-auto flex flex-col px-4 py-2">
-        <li v-for="link in links" :key="link.href">
-          <a :href="link.href" class="block py-3" :class="navLink" @click="closeMenu">
+        <li v-for="link in links" :key="link.id">
+          <a
+            :href="`#${link.id}`"
+            class="block py-3"
+            :class="activeSection === link.id ? navLinkActive : navLink"
+            :aria-current="activeSection === link.id ? 'location' : undefined"
+            @click="closeMenu"
+          >
             {{ t(`header.links.${link.key}`) }}
           </a>
         </li>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AboutSection from './components/AboutSection.vue'
+import SkillsSection from './components/SkillsSection.vue'
 import TheHeader from './components/TheHeader.vue'
 </script>
 
@@ -7,5 +8,6 @@ import TheHeader from './components/TheHeader.vue'
   <TheHeader />
   <main>
     <AboutSection />
+    <SkillsSection />
   </main>
 </template>

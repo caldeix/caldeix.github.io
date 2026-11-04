@@ -57,6 +57,13 @@
     scroll-padding-top: 4rem;
   }
 
+  /* Desplazamiento suave al pulsar el menú, salvo con «reducir movimiento» */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   html.light {
     color-scheme: light;
   }

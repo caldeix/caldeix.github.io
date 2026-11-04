@@ -45,5 +45,37 @@
       "button": "Descargar CV",
       "fileName": "CV-Luis-Miguel-Caldeiro.pdf"
     }
+  },
+  "skills": {
+    "title": "Skills",
+    "ring": "Anillo de skills: arrastra hacia los lados o usa los botones para girarlo",
+    "previous": "Ver las anteriores",
+    "next": "Ver las siguientes",
+    "pause": "Parar el giro automático",
+    "play": "Reanudar el giro automático",
+    "names": {
+      "agents": "Agentes IA",
+      "restApi": "APIs REST"
+    },
+    "tags": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "backendAi": "Backend/IA",
+      "ide": "IDE",
+      "ai": "IA",
+      "localAi": "IA local",
+      "nosql": "NoSQL",
+      "os": "Sistema",
+      "apiTesting": "APIs",
+      "dbClient": "Cliente BD",
+      "scripting": "Scripting",
+      "sql": "SQL",
+      "devops": "DevOps",
+      "versionControl": "Control de versiones",
+      "docs": "Documentación",
+      "data": "Datos",
+      "transfer": "SFTP",
+      "management": "Gestión"
+    }
   }
 }
