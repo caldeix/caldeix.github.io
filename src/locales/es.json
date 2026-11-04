@@ -225,5 +225,34 @@
     "viewCertificate": "Ver el certificado de {title}",
     "closeCertificate": "Cerrar el certificado",
     "certificateAlt": "Certificado de {title}"
+  },
+  "hobbies": {
+    "title": "Hobbies",
+    "items": {
+      "paddleSurf": {
+        "title": "Paddle surf",
+        "badge": "Plan de verano",
+        "text": [
+          "En cuanto llega el verano, mi plan favorito es coger la tabla de paddle surf y salir al mar a primera hora, cuando el agua está como un espejo.",
+          "Remar con calma, desconectar del móvil y, alguna que otra vez, acabar en el agua con más estilo que equilibrio."
+        ]
+      },
+      "football": {
+        "title": "Fútbol",
+        "badge": "7 años de árbitro",
+        "text": [
+          "Me gusta por los dos lados: verlo y, sobre todo, echarme unas pachangas con los amigos… aunque reconozco que ahí me sale la vena competitiva y no doy un balón por perdido.",
+          "Eso sí, he sido árbitro de fútbol sala durante 7 años, así que la paciencia la traigo bien entrenada."
+        ]
+      },
+      "coding": {
+        "title": "Programar",
+        "badge": "Sí, también es un hobby",
+        "text": [
+          "Soy de esos frikis que, al acabar la jornada, abren el portátil «solo un ratito» y terminan montando otro proyecto a las tantas.",
+          "Me encanta trastear con todo lo que voy descubriendo por internet: desde probar modelos de IA en local, como Kev, la versión open source del modelo de decisión Jev, hasta herramientas nuevas que todavía nadie sabe muy bien para qué sirven (yo tampoco, pero las pruebo igual)."
+        ]
+      }
+    }
   }
 }
