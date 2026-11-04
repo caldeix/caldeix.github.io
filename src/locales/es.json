@@ -147,5 +147,83 @@
         ]
       }
     }
+  },
+  "education": {
+    "title": "Educación",
+    "degreesTitle": "Formación",
+    "certificationsTitle": "Certificaciones",
+    "inProgress": "En curso",
+    "showCredential": "Ver credencial",
+    "newTab": "se abre en una pestaña nueva",
+    "degrees": {
+      "engineering": {
+        "title": "Grado en Informática",
+        "subtitle": "(Bachelor en Informática)",
+        "level": "Bachelor · 180 ECTS · Online",
+        "school": "UNIPRO Universitat Digital Europea",
+        "description": "Diseño, implementación y optimización de soluciones tecnológicas: programación, inteligencia artificial, ciberseguridad, bases de datos y arquitectura de sistemas.",
+        "source": "Descripción oficial de UNIPRO"
+      },
+      "dam": {
+        "title": "Desarrollo de Aplicaciones Multiplataforma (DAM)",
+        "level": "Técnico Superior · CFGS",
+        "school": "Institut Joan d'Àustria",
+        "description": "Desarrollar, implantar, documentar y mantener aplicaciones informáticas multiplataforma con tecnologías y entornos de desarrollo específicos, garantizando el acceso seguro a los datos y cumpliendo los criterios de usabilidad y calidad.",
+        "source": "Real Decreto 450/2010"
+      },
+      "smr": {
+        "title": "Sistemas Microinformáticos y Redes (SMR)",
+        "level": "Técnico · CFGM",
+        "school": "Institut Joan d'Àustria",
+        "description": "Instalar, configurar y mantener sistemas microinformáticos, aislados o en red, y redes locales en pequeños entornos, asegurando su funcionamiento y aplicando los protocolos de calidad, seguridad y protección ambiental.",
+        "source": "Real Decreto 1691/2007"
+      }
+    },
+    "certifications": {
+      "microsoftGenAi": {
+        "title": "Fundamentos profesionales de IA generativa",
+        "issuer": "Microsoft y LinkedIn"
+      },
+      "m365Copilot": {
+        "title": "Descubre Microsoft 365 Copilot",
+        "issuer": "LinkedIn"
+      },
+      "aiBeyondEngineering": {
+        "title": "Inteligencia artificial más allá de la ingeniería",
+        "issuer": "LinkedIn"
+      },
+      "aiEthics": {
+        "title": "Ética en la era de la inteligencia artificial generativa",
+        "issuer": "LinkedIn"
+      },
+      "copilotChat": {
+        "title": "Agiliza tu trabajo con el chat de Microsoft Copilot",
+        "issuer": "LinkedIn"
+      },
+      "aiSearch": {
+        "title": "IA generativa: la evolución de la búsqueda inteligente en Internet",
+        "issuer": "LinkedIn"
+      },
+      "whatIsGenAi": {
+        "title": "Qué es la IA generativa",
+        "issuer": "LinkedIn"
+      },
+      "udemyGenAi": {
+        "title": "IA generativa: ChatGPT, Midjourney y más",
+        "issuer": "Udemy"
+      },
+      "udemyPhpMaster": {
+        "title": "Máster en PHP, SQL, POO, MVC, Laravel, Symfony y WordPress",
+        "issuer": "Udemy"
+      },
+      "udemyFlexbox": {
+        "title": "Flexbox desde 0",
+        "issuer": "Udemy"
+      }
+    },
+    "estimatedEnd": "* Fecha de fin prevista",
+    "viewCertificate": "Ver el certificado de {title}",
+    "closeCertificate": "Cerrar el certificado",
+    "certificateAlt": "Certificado de {title}"
   }
 }

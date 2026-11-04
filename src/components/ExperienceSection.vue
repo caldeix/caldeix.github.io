@@ -1,109 +1,103 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, reactive, ref } from "vue";
-import { useI18n } from "vue-i18n";
-import { jobs, type Job } from "@/data/experience";
-import { filledCard, sectionTitle } from "@/ds";
+import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { jobs, type Job } from '@/data/experience'
+import { filledCard, sectionTitle } from '@/ds'
 
-const { t, tm, rt, locale } = useI18n();
+const { t, tm, rt, locale } = useI18n()
 
 // ---------- Fechas y duración ----------
 
 function parseMonth(value: string): { year: number; month: number } {
-  const [year = 0, month = 1] = value.split("-").map(Number);
-  return { year, month };
+  const [year = 0, month = 1] = value.split('-').map(Number)
+  return { year, month }
 }
 
 function today(): string {
-  const now = new Date();
-  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+  const now = new Date()
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
 }
 
 function formatMonth(value: string): string {
-  const { year, month } = parseMonth(value);
+  const { year, month } = parseMonth(value)
   return new Intl.DateTimeFormat(locale.value, {
-    month: "short",
-    year: "numeric",
-  }).format(new Date(year, month - 1));
+    month: 'short',
+    year: 'numeric',
+  }).format(new Date(year, month - 1))
 }
 
 /** Duración contando el mes de inicio y el de fin, como LinkedIn («5 años y 1 mes») */
 function duration(job: Job): string {
-  const start = parseMonth(job.start);
-  const end = parseMonth(job.end ?? today());
-  const total = end.year * 12 + end.month - (start.year * 12 + start.month) + 1;
-  const years = Math.floor(total / 12);
-  const months = total % 12;
+  const start = parseMonth(job.start)
+  const end = parseMonth(job.end ?? today())
+  const total = end.year * 12 + end.month - (start.year * 12 + start.month) + 1
+  const years = Math.floor(total / 12)
+  const months = total % 12
   const parts = [
-    years ? t("experience.duration.years", years) : "",
-    months ? t("experience.duration.months", months) : "",
-  ].filter(Boolean);
-  return parts.join(` ${t("experience.duration.and")} `);
+    years ? t('experience.duration.years', years) : '',
+    months ? t('experience.duration.months', months) : '',
+  ].filter(Boolean)
+  return parts.join(` ${t('experience.duration.and')} `)
 }
 
 function achievements(job: Job): string[] {
-  return (tm(`experience.items.${job.id}.achievements`) as string[]).map(
-    (text) => rt(text),
-  );
+  return (tm(`experience.items.${job.id}.achievements`) as string[]).map((text) => rt(text))
 }
 
 // ---------- Animación al hacer scroll ----------
 
-const reducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
-const animate = !reducedMotion && "IntersectionObserver" in window;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const animate = !reducedMotion && 'IntersectionObserver' in window
 
 /** Puestos que ya han aparecido */
-const shown = reactive(new Set<string>());
-const list = ref<HTMLElement | null>(null);
+const shown = reactive(new Set<string>())
+const list = ref<HTMLElement | null>(null)
 /** Parte de la línea ya «dibujada», de 0 a 1 */
-const progress = ref(animate ? 0 : 1);
-let observer: IntersectionObserver | undefined;
-let frame = 0;
+const progress = ref(animate ? 0 : 1)
+let observer: IntersectionObserver | undefined
+let frame = 0
 
 function updateProgress() {
-  frame = 0;
-  const element = list.value;
-  if (!element) return;
-  const box = element.getBoundingClientRect();
+  frame = 0
+  const element = list.value
+  if (!element) return
+  const box = element.getBoundingClientRect()
   // La línea llega hasta donde está el centro de la pantalla
-  const reached = window.innerHeight / 2 - box.top;
-  progress.value = Math.min(1, Math.max(0, reached / box.height));
+  const reached = window.innerHeight / 2 - box.top
+  progress.value = Math.min(1, Math.max(0, reached / box.height))
 }
 
 function onScroll() {
-  if (!frame) frame = requestAnimationFrame(updateProgress);
+  if (!frame) frame = requestAnimationFrame(updateProgress)
 }
 
 onMounted(() => {
-  if (!animate) return;
+  if (!animate) return
   observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        shown.add((entry.target as HTMLElement).dataset.job ?? "");
-        observer?.unobserve(entry.target);
+        if (!entry.isIntersecting) continue
+        shown.add((entry.target as HTMLElement).dataset.job ?? '')
+        observer?.unobserve(entry.target)
       }
     },
-    { rootMargin: "0px 0px -15% 0px" },
-  );
-  list.value
-    ?.querySelectorAll<HTMLElement>("[data-job]")
-    .forEach((item) => observer?.observe(item));
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  updateProgress();
-});
+    { rootMargin: '0px 0px -15% 0px' },
+  )
+  list.value?.querySelectorAll<HTMLElement>('[data-job]').forEach((item) => observer?.observe(item))
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onScroll)
+  updateProgress()
+})
 
 onBeforeUnmount(() => {
-  observer?.disconnect();
-  window.removeEventListener("scroll", onScroll);
-  window.removeEventListener("resize", onScroll);
-  cancelAnimationFrame(frame);
-});
+  observer?.disconnect()
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('resize', onScroll)
+  cancelAnimationFrame(frame)
+})
 
 function hidden(job: Job): boolean {
-  return animate && !shown.has(job.id);
+  return animate && !shown.has(job.id)
 }
 </script>
 
@@ -111,7 +105,7 @@ function hidden(job: Job): boolean {
   <section id="experiencia" class="py-16" aria-labelledby="experiencia-titulo">
     <div class="container mx-auto flex flex-col gap-10 px-4">
       <h2 id="experiencia-titulo" :class="sectionTitle">
-        {{ t("experience.title") }}
+        {{ t('experience.title') }}
       </h2>
 
       <div ref="list" class="relative">
@@ -159,25 +153,19 @@ function hidden(job: Job): boolean {
                 hidden(job) ? 'opacity-0' : 'opacity-100',
               ]"
             >
-              <p
-                class="m-0 font-text text-base font-bold text-gray-800 dark:text-white"
-              >
+              <p class="m-0 font-text text-base font-bold text-gray-800 dark:text-white">
                 <time :datetime="job.start">{{ formatMonth(job.start) }}</time>
                 –
-                <time v-if="job.end" :datetime="job.end">{{
-                  formatMonth(job.end)
-                }}</time>
-                <template v-else>{{ t("experience.present") }}</template>
+                <time v-if="job.end" :datetime="job.end">{{ formatMonth(job.end) }}</time>
+                <template v-else>{{ t('experience.present') }}</template>
               </p>
               <span
                 v-if="!job.end"
                 class="inline-flex h-6 items-center rounded-full bg-emerald-500 px-3 font-text text-sm font-bold text-gray-900"
               >
-                {{ t("experience.current") }}
+                {{ t('experience.current') }}
               </span>
-              <p
-                class="m-0 w-full font-text text-sm text-gray-500 dark:text-gray-400"
-              >
+              <p class="m-0 w-full font-text text-sm text-gray-500 dark:text-gray-400">
                 {{ duration(job) }}
               </p>
             </div>
@@ -197,9 +185,7 @@ function hidden(job: Job): boolean {
             >
               <header class="flex flex-col gap-1">
                 <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-                  <h3
-                    class="m-0 font-text text-lg font-bold text-gray-800 dark:text-white"
-                  >
+                  <h3 class="m-0 font-text text-lg font-bold text-gray-800 dark:text-white">
                     {{ t(`experience.items.${job.id}.role`) }}
                   </h3>
                   <!-- Insignia del DS, en azul -->
@@ -211,9 +197,7 @@ function hidden(job: Job): boolean {
                     {{ t(`experience.badges.${badge}`) }}
                   </span>
                 </div>
-                <p
-                  class="m-0 font-text text-base font-medium text-blue-600 dark:text-blue-400"
-                >
+                <p class="m-0 font-text text-base font-medium text-blue-600 dark:text-blue-400">
                   {{ t(`experience.items.${job.id}.company`) }}
                   <span class="font-normal text-gray-500 dark:text-gray-400">
                     · {{ t(`experience.items.${job.id}.type`) }}
