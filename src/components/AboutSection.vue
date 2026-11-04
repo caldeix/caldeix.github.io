@@ -15,8 +15,8 @@ const { t, tm, rt } = useI18n()
 
 const phrases = computed(() => (tm('about.phrases') as string[]).map((phrase) => rt(phrase)))
 
-// Años trabajando como desarrollador: se calcula solo, desde 2020 (2026 → +6, 2027 → +7)
-const yearsWorking = new Date().getFullYear() - 2020
+// Años trabajando como desarrollador: se calcula solo, desde 2019 (2026 → +7, 2027 → +8)
+const yearsWorking = new Date().getFullYear() - 2019
 
 const PHONE = '+34682704197'
 const EMAIL = 'caldeiro.tech@pm.me'

@@ -77,5 +77,75 @@
       "transfer": "SFTP",
       "management": "Gestión"
     }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Actualidad",
+    "current": "Puesto actual",
+    "technologies": "Tecnologías",
+    "badges": {
+      "fullstack": "Fullstack",
+      "hardware": "Hardware"
+    },
+    "duration": {
+      "years": "{n} año | {n} años",
+      "months": "{n} mes | {n} meses",
+      "and": "y"
+    },
+    "items": {
+      "atls": {
+        "role": "Desarrollador",
+        "company": "ATLS",
+        "type": "Jornada completa",
+        "achievements": [
+          "Desarrollo de APIs REST en PHP con Laravel y frameworks propios, y personalización de frontales en Vue.",
+          "Migraciones críticas de software: de PHP 5 a 8.5 y de MySQL 5 a 8.",
+          "Automatizaciones en Python que integran GPT y modelos de IA propios.",
+          "Colas de procesos y envío de correos en Java para sistemas internos."
+        ]
+      },
+      "clickedu": {
+        "role": "Desarrollador web",
+        "company": "Clickedu",
+        "type": "Jornada completa",
+        "place": "Barcelona · En remoto",
+        "achievements": [
+          "Análisis y resolución de incidencias en aplicaciones educativas.",
+          "Desarrollo en PHP y JavaScript, siempre responsive, con Bootstrap.",
+          "Control de versiones con Git."
+        ]
+      },
+      "foxtenn": {
+        "role": "Especialista en operaciones",
+        "company": "Foxtenn Technologies",
+        "type": "Jornada completa",
+        "place": "Barcelona · Presencial",
+        "achievements": [
+          "Instalación de hardware para la recogida de datos en torneos de tenis.",
+          "Soporte del software propio que mide y analiza estadísticas en tiempo real durante los partidos."
+        ]
+      },
+      "gmedia": {
+        "role": "Desarrollador web",
+        "company": "GMEDIA",
+        "type": "Prácticas",
+        "place": "Barcelona · Presencial",
+        "achievements": [
+          "Webs y aplicaciones dinámicas en PHP y JavaScript, con jQuery y Ajax.",
+          "Webs de contenido con WordPress.",
+          "Maquetación responsive con HTML, CSS y Bootstrap según las especificaciones del cliente."
+        ]
+      },
+      "cellservice": {
+        "role": "Especialista informático",
+        "company": "Cellservice Group",
+        "type": "Prácticas",
+        "place": "Santa Coloma de Gramenet",
+        "achievements": [
+          "Reparación y configuración de hardware y software.",
+          "Visitas a clientes y soporte remoto para resolver incidencias técnicas."
+        ]
+      }
+    }
   }
 }

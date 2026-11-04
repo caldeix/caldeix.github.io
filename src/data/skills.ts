@@ -53,6 +53,7 @@ export const skills: Skill[] = [
   { id: 'java', name: 'Java', logos: [logo('java.svg')], tag: 'backend' },
   { id: 'python', name: 'Python', logos: [logo('python.svg')], tag: 'backendAi' },
   { id: 'vue', name: 'Vue', logos: [logo('vue.svg')], tag: 'frontend' },
+  { id: 'laravel', name: 'Laravel', logos: [logo('laravel.svg')], tag: 'backend' },
   { id: 'flask', name: 'Flask', logos: [logo('flask.svg')], tag: 'backend' },
   { id: 'restApi', logos: [logo('rest-api.svg')], tag: 'backend' },
   { id: 'vscode', name: 'VS Code', logos: [logo('vscode.svg')], tag: 'ide' },
