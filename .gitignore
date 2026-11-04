@@ -37,3 +37,6 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# Borradores y fuente del CV (el PDF publicado está en public/assets/cv.pdf)
+cv/
