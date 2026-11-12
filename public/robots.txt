@@ -1,0 +1,7 @@
+# robots.txt de todo caldeix.github.io: solo cuenta el de la raíz del dominio,
+# así que aquí también van los sitemaps de los otros repos publicados bajo él (/links/, /blog/…).
+User-agent: *
+Allow: /
+
+Sitemap: https://caldeix.github.io/sitemap.xml
+Sitemap: https://caldeix.github.io/links/sitemap.xml

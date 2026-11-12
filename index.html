@@ -14,7 +14,7 @@
     <!-- Vista previa al compartir el enlace (LinkedIn, WhatsApp, Slack, X…).
          Los buscadores y las redes no ejecutan JavaScript, así que van escritos aquí. -->
     <meta property="og:type" content="profile">
-    <meta property="og:site_name" content="Caldeix">
+    <meta property="og:site_name" content="Luis Miguel Caldeiro">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://caldeix.github.io/">
     <meta property="og:title" content="Luis Miguel Caldeiro · Desarrollador full stack PHP e IA">
@@ -29,6 +29,53 @@
     <meta name="twitter:title" content="Luis Miguel Caldeiro · Desarrollador full stack PHP e IA">
     <meta name="twitter:description" content="Backend en PHP y MySQL, automatización con IA y tecnología al servicio del negocio.">
     <meta name="twitter:image" content="https://caldeix.github.io/og-image.png">
+
+    <!-- Datos estructurados para Google. Esta es la portada del dominio, así que el WebSite
+         da el nombre del sitio a todo caldeix.github.io (también a /links/ y al futuro /blog/),
+         y la Person es la ficha principal a la que apuntan las demás páginas por su @id. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://caldeix.github.io/#website",
+          "url": "https://caldeix.github.io/",
+          "name": "Luis Miguel Caldeiro",
+          "alternateName": ["Caldeix", "Luis Miguel Caldeiro Fernández"],
+          "inLanguage": "es",
+          "publisher": { "@id": "https://caldeix.github.io/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://caldeix.github.io/#profilepage",
+          "url": "https://caldeix.github.io/",
+          "name": "Luis Miguel Caldeiro · Desarrollador fullstack",
+          "inLanguage": "es",
+          "isPartOf": { "@id": "https://caldeix.github.io/#website" },
+          "mainEntity": { "@id": "https://caldeix.github.io/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://caldeix.github.io/#person",
+          "name": "Luis Miguel Caldeiro Fernández",
+          "givenName": "Luis Miguel",
+          "familyName": "Caldeiro Fernández",
+          "alternateName": ["Luis Miguel Caldeiro", "Caldeix"],
+          "jobTitle": "Desarrollador full stack PHP e IA",
+          "description": "Más de 7 años desarrollando software. Backend en PHP y MySQL, automatización con IA y tecnología al servicio del negocio.",
+          "url": "https://caldeix.github.io/",
+          "image": "https://caldeix.github.io/og-image.png",
+          "knowsAbout": ["PHP", "MySQL", "APIs REST", "Vue.js", "Python", "Inteligencia artificial", "LLMs"],
+          "sameAs": [
+            "https://www.linkedin.com/in/caldeiro-luism/",
+            "https://github.com/caldeix",
+            "https://caldeix.github.io/links/"
+          ]
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300..700&family=Roboto:wght@100..900&display=swap">
